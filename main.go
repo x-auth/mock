@@ -2,7 +2,7 @@ package main
 
 import "github.com/x-auth/common/models"
 
-type plugin struct {
+type Plugin struct {
 	username string
 	password string
 }
@@ -22,9 +22,9 @@ func (p *plugin) Login(username string, password string) (models.Profile, bool) 
 	return models.Profile{}, false
 }
 
-func (p *plugin) Init(config map[string]string) {
-	p.username = config["username"]
-	p.password = config["password"]
+func Init(username string, password string) Plugin {
+	return Plugin{
+		username: username
+		password: password
+	}
 }
-
-var Plugin plugin
