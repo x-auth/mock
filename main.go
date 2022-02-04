@@ -24,7 +24,7 @@ func (p *plugin) Login(username string, password string) (models.Profile, bool) 
 
 func Init(username string, password string) Plugin {
 	return Plugin{
-		username: username
-		password: password
+		username: username,
+		password: password,
 	}
 }
